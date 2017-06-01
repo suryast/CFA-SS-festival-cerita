@@ -1,0 +1,13 @@
+<ul class="pagination">
+	<li {{#unless data.volunteers.previous}}class="disabled"{{/unless}}>
+		<a href="{{paginationVolunteerPreviousUrl data.volunteers.previous}}">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+	</li>
+	{{{paginationVolunteerNavigation data.volunteers.pages data.volunteers.currentPage data.volunteers.totalPages}}}
+	<li {{#unless data.volunteers.next}}class="disabled"{{/unless}}>
+		<a href="{{paginationVolunteerNextUrl data.volunteers.next data.volunteers.totalPages}}">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	</li>
+</ul>

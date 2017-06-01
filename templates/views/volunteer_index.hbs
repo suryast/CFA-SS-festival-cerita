@@ -1,0 +1,23 @@
+<div class="container">
+	<h1>Volunteer Index</h1>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8 col-md-9">
+			<h4 class="text-weight-normal">Showing {{ data.volunteers.results.length}} volunteers.</h4>
+			<div class="blog">
+				{{# each data.volunteers.results}}
+				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
+					<h2><a href="{{volunteerUrl slug}}">{{{title}}}</a></h2>
+					<p class="lead text-muted">
+							{{#if author.name.first}} added by {{author.name.first}}{{/if}}
+					</p>
+					{{#if image}}<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img pull-right">{{/if}}
+					<p>{{{content.brief}}}</p>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+	{{>volunteer_pagination}}
+</div>

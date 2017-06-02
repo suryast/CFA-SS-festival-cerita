@@ -201,6 +201,11 @@ module.exports = function () {
 		return ('/volunteer_index/volunteer/' + postSlug);
 	};
 
+	// Direct url link to a specific writer
+	_helpers.writerUrl = function (postSlug, options) {
+		return ('/writer_index/writer/' + postSlug);
+	};
+
 	// might be a ghost helper
 	// used for pagination urls on blog
 	_helpers.pageUrl = function (pageNumber, options) {
@@ -211,6 +216,12 @@ module.exports = function () {
 	// used for pagination urls on volunteer index
 	_helpers.pageVolunteerUrl = function (pageNumber, options) {
 		return '/volunteer_index?page=' + pageNumber;
+	};
+
+	// might be a ghost helper
+	// used for pagination urls on writer index
+	_helpers.pageWriterUrl = function (pageNumber, options) {
+		return '/writer_index?page=' + pageNumber;
 	};
 
 	// create the category url for a blog-category page
@@ -310,6 +321,33 @@ module.exports = function () {
 		return html;
 	};
 
+	_helpers.paginationWriterNavigation = function (pages, currentPage, totalPages, options) {
+		var html = '';
+
+		// pages should be an array ex.  [1,2,3,4,5,6,7,8,9,10, '....']
+		// '...' will be added by keystone if the pages exceed 10
+		_.each(pages, function (page, ctr) {
+			// create ref to page, so that '...' is displayed as text even though int value is required
+			var pageText = page;
+			// create boolean flag state if currentPage
+			var isActivePage = ((page === currentPage) ? true : false);
+			// need an active class indicator
+			var liClass = ((isActivePage) ? ' class="confirmed"' : '');
+
+			// if '...' is sent from keystone then we need to override the url
+			if (page === '...') {
+				// check position of '...' if 0 then return page 1, otherwise use totalPages
+				page = ((ctr) ? totalPages : 1);
+			}
+
+			// get the pageUrl using the integer value
+			var writerUrl = _helpers.writerUrl(page);
+			// wrapup the html
+			html += '<li' + liClass + '>' + linkTemplate({ url: writerUrl, text: pageText }) + '</li>\n';
+		});
+		return html;
+	};
+
 	// special helper to ensure that we always have a valid page url set even if
 	// the link is disabled, will default to page 1
 	_helpers.paginationVolunteerPreviousUrl = function (previousPage, totalPages) {
@@ -317,6 +355,15 @@ module.exports = function () {
 			previousPage = 1;
 		}
 		return _helpers.volunteerUrl(previousPage);
+	};
+
+	// special helper to ensure that we always have a valid page url set even if
+	// the link is disabled, will default to page 1
+	_helpers.paginationWriterPreviousUrl = function (previousPage, totalPages) {
+		if (previousPage === false) {
+			previousPage = 1;
+		}
+		return _helpers.writerUrl(previousPage);
 	};
 
 	// special helper to ensure that we always have a valid next page url set
@@ -328,6 +375,14 @@ module.exports = function () {
 		return _helpers.volunteerUrl(nextPage);
 	};
 
+	// special helper to ensure that we always have a valid next page url set
+	// even if the link is disabled, will default to totalPages
+	_helpers.paginationWriterNextUrl = function (nextPage, totalPages) {
+		if (nextPage === false) {
+			nextPage = totalPages;
+		}
+		return _helpers.writerUrl(nextPage);
+	};
 
 	//  ### Flash Message Helper
 	//  KeystoneJS supports a message interface for information/errors to be passed from server

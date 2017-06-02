@@ -1,0 +1,13 @@
+<ul class="pagination">
+	<li {{#unless data.writers.previous}}class="disabled"{{/unless}}>
+		<a href="{{paginationWriterPreviousUrl data.writers.previous}}">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+	</li>
+	{{{paginationWriterNavigation data.writers.pages data.writers.currentPage data.writers.totalPages}}}
+	<li {{#unless data.writers.next}}class="disabled"{{/unless}}>
+		<a href="{{paginationWriterNextUrl data.writers.next data.writers.totalPages}}">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	</li>
+</ul>

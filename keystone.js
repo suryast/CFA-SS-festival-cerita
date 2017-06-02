@@ -3,8 +3,8 @@
 require('dotenv').config();
 
 // Require keystone
-var keystone = require('keystone');
-var handlebars = require('express-handlebars');
+const keystone = require('keystone');
+const handlebars = require('express-handlebars');
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
@@ -19,6 +19,7 @@ keystone.init({
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': '.hbs',
+	'mongo': 'mongodb://localhost/festival-cerita-jakarta' || process.env.MONGO_URI,
 
 	'custom engine': handlebars.create({
 		layoutsDir: 'templates/views/layouts',
@@ -32,6 +33,8 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
+	'session store': 'mongo',
+	'wysiwyg menubar': true,
 });
 
 // Load your project's Models

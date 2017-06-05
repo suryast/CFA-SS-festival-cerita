@@ -13,7 +13,7 @@ var Volunteer = new keystone.List('Volunteer', {
 
 Volunteer.add({
 	title: { type: String, required: true },
-	state: { type: Types.Select, options: 'active,inactive', default: 'active', index: true },
+	state: { type: Types.Select, options: 'active, inactive', default: 'active', index: true },
 	author: { type: Types.Relationship, ref: 'User', index: true },
 	image: { type: Types.CloudinaryImage },
 	content: {

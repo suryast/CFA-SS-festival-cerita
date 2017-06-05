@@ -7,10 +7,10 @@
 				<header>
 					<h1>{{data.writer.title}}</h1>
 					<h5>
-						{{{categoryList data.writer.state prefix="Active Volunteers: "}}}
+						Status: {{data.writer.state}}
 					</h5>
 				</header>
-				<div class="writer">
+				<div class="post">
 					{{#if data.writer.image}}<img src="{{{cloudinaryUrl data.writer.image width=750 height=450 crop='fit' }}}" class="img-responsive">{{/if}}
 					{{{data.writer.content.extended}}}
 				</div>

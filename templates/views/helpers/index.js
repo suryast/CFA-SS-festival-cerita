@@ -115,6 +115,33 @@ module.exports = function () {
 		return new hbs.SafeString(output);
 	};
 
+	_helpers.categoryEventList = function (categories, options) {
+		var autolink = _.isString(options.hash.autolink) && options.hash.autolink === 'false' ? false : true;
+		var separator = _.isString(options.hash.separator) ? options.hash.separator : ', ';
+		var prefix = _.isString(options.hash.prefix) ? options.hash.prefix : '';
+		var suffix = _.isString(options.hash.suffix) ? options.hash.suffix : '';
+		var output = '';
+
+		function createTagList (tags) {
+			var tagNames = _.map(tags, 'name');
+
+			if (autolink) {
+				return _.map(tags, function (tag) {
+					return linkTemplate({
+						url: ('/program/' + tag.key),
+						text: _.escape(tag.name),
+					});
+				}).join(separator);
+			}
+			return _.escape(tagNames.join(separator));
+		}
+
+		if (categories && categories.length) {
+			output = prefix + createTagList(categories) + suffix;
+		}
+		return new hbs.SafeString(output);
+	};
+
 	/**
 	 * KeystoneJS specific helpers
 	 * ===========================
@@ -206,6 +233,11 @@ module.exports = function () {
 		return ('/writer_index/writer/' + postSlug);
 	};
 
+	// Direct url link to a specific event
+	_helpers.eventUrl = function (postSlug, options) {
+		return ('/program/event/' + postSlug);
+	};
+
 	// might be a ghost helper
 	// used for pagination urls on blog
 	_helpers.pageUrl = function (pageNumber, options) {
@@ -224,9 +256,20 @@ module.exports = function () {
 		return '/writer_index?page=' + pageNumber;
 	};
 
+	// might be a ghost helper
+	// used for pagination urls on event index
+	_helpers.pageEventUrl = function (pageNumber, options) {
+		return '/program?page=' + pageNumber;
+	};
+
 	// create the category url for a blog-category page
 	_helpers.categoryUrl = function (categorySlug, options) {
 		return ('/blog/' + categorySlug);
+	};
+
+	// create the category url for a event-category page
+	_helpers.categoryEventUrl = function (categorySlug, options) {
+		return ('/program/' + categorySlug);
 	};
 
 	// ### Pagination Helpers
@@ -348,6 +391,33 @@ module.exports = function () {
 		return html;
 	};
 
+	_helpers.paginationEventNavigation = function (pages, currentPage, totalPages, options) {
+		var html = '';
+
+		// pages should be an array ex.  [1,2,3,4,5,6,7,8,9,10, '....']
+		// '...' will be added by keystone if the pages exceed 10
+		_.each(pages, function (page, ctr) {
+			// create ref to page, so that '...' is displayed as text even though int value is required
+			var pageText = page;
+			// create boolean flag state if currentPage
+			var isActivePage = ((page === currentPage) ? true : false);
+			// need an active class indicator
+			var liClass = ((isActivePage) ? ' class="confirmed"' : '');
+
+			// if '...' is sent from keystone then we need to override the url
+			if (page === '...') {
+				// check position of '...' if 0 then return page 1, otherwise use totalPages
+				page = ((ctr) ? totalPages : 1);
+			}
+
+			// get the pageUrl using the integer value
+			var eventUrl = _helpers.eventUrl(page);
+			// wrapup the html
+			html += '<li' + liClass + '>' + linkTemplate({ url: eventUrl, text: pageText }) + '</li>\n';
+		});
+		return html;
+	};
+
 	// special helper to ensure that we always have a valid page url set even if
 	// the link is disabled, will default to page 1
 	_helpers.paginationVolunteerPreviousUrl = function (previousPage, totalPages) {
@@ -366,6 +436,15 @@ module.exports = function () {
 		return _helpers.writerUrl(previousPage);
 	};
 
+	// special helper to ensure that we always have a valid page url set even if
+	// the link is disabled, will default to page 1
+	_helpers.paginationEventPreviousUrl = function (previousPage, totalPages) {
+		if (previousPage === false) {
+			previousPage = 1;
+		}
+		return _helpers.eventUrl(previousPage);
+	};
+
 	// special helper to ensure that we always have a valid next page url set
 	// even if the link is disabled, will default to totalPages
 	_helpers.paginationVolunteerNextUrl = function (nextPage, totalPages) {
@@ -382,6 +461,15 @@ module.exports = function () {
 			nextPage = totalPages;
 		}
 		return _helpers.writerUrl(nextPage);
+	};
+
+	// special helper to ensure that we always have a valid next page url set
+	// even if the link is disabled, will default to totalPages
+	_helpers.paginationEventNextUrl = function (nextPage, totalPages) {
+		if (nextPage === false) {
+			nextPage = totalPages;
+		}
+		return _helpers.eventUrl(nextPage);
 	};
 
 	//  ### Flash Message Helper

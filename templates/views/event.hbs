@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+			<article>
+				<p><a href="/program">&larr; back to the event list</a></p>
+				<hr>
+				<header>
+					<h1>{{data.event.title}}</h1>
+					<h5>
+						{{{categoryEventList data.event.categories prefix="Posted in "}}}
+						<!-- {{#if creator.name.first}}by {{creator.name.first}}{{/if}} -->
+					</h5>
+				</header>
+				<div class="post">
+					{{#if data.event.image}}<img src="{{{cloudinaryUrl data.event.image width=750 height=450 crop='fit' }}}" class="img-responsive">{{/if}}
+					{{{data.event.content.extended}}}
+				</div>
+			</article>
+		</div>
+	</div>
+</div>

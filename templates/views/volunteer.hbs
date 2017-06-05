@@ -7,10 +7,10 @@
 				<header>
 					<h1>{{data.volunteer.title}}</h1>
 					<h5>
-						{{{categoryList data.volunteer.state prefix="Active Volunteers: "}}}
+						Volunteer Status: {{{data.volunteer.state}}}
 					</h5>
 				</header>
-				<div class="volunteer">
+				<div class="post">
 					{{#if data.volunteer.image}}<img src="{{{cloudinaryUrl data.volunteer.image width=750 height=450 crop='fit' }}}" class="img-responsive">{{/if}}
 					{{{data.volunteer.content.extended}}}
 				</div>

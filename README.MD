@@ -69,21 +69,15 @@ The programs have five prongs that are either ongoing or planned for the future:
 
   1. Free face-to-face writing and drawing workshops for under-resourced students – ongoing main project.
   2. Paid writing workshops delivered to established schools – initiative to explore.
-
   3. **Festival Cerita Jakarta** by Rumah Cerita
-
       Annual children writing festival to subsidise for approach #1. This initiative received $10K funding in early 2017 from the Australian Government through Australia Awards. The inaugural festival will be held in November 2017. This initiative needs an event+registration platform.
 
       Reference: https://www.swf.org.au.
-
   4. **Student Press Online** by Rumah Cerita
-
       This curated media platform would host and exhibit digital work of school kids who are involved in producing student press for their respective schools. The platform would also enable young writers to connect with trained mentors, and allows schools who may not be within reach locally to get inspired and benefit from our work – initiative to explore.
 
       Inspiration: http://www.timeforkids.com.
-
   5. **Coret** by Rumah Cerita
-
       Marketplace for selling fashion products that are inspired by writings and artworks of kids that are involved in writing and drawing workshops. The profit from sale will be shared with the creator of the original work. Each product would have a note that contains short story behind each work as written by the kids themselves – initiative to explore.
 
       Inspiration: http://tohe.vn/en/.
@@ -107,30 +101,43 @@ Front-end:
 
 Back-end:
 -   MongoDB
--   KeystoneJS
+-   ExpressJS via KeystoneJS
 
 Accompanying bobile app front-end (may be?):
--   React Native
+-   React Native JS
 
 [Return to overview](#overview)
 
 Business problem
 ======
--   Festival organiser needs ticketing system to register attendance.
--   For this year the festival will be held for two days. It will be a free event and registration would cover attendance for the whole festival.
--   In the future, the festival would be a paid ticketed event.
--   Festival organiser will be able to add authors, events and create contents for the different events.
+-   Festival organiser needs to inform the world about the event, keep track of registration, keep track of volunteer registration, follow up with attendees post-event,
+-   For this year the festival will be held for two days. It will be a free event and registration would cover attendance for the whole festival. In the future, the festival would be a paid ticketed event.
+-   Festival organiser needs to be able to add speakers, events and create contents for the festival.
 
 [Return to overview](#overview)
 
 Solution
 ======
+-   Landing page that can be the starting point of information for all stakeholders
+-   Has CMS dashboard
+-   Integrated ticketing connection using Eventbrite’s API
+-   Containing database that records participants, volunteers, authors and contents
 
 [Return to overview](#overview)
 
 User stories
 ======
 I used Trello to map user stories and project planning. The board can be found here https://trello.com/b/hq9JxkwH/festival-cerita
+
+-   As a user I want to be able to see schedule of the events so that I can decide whether to attend the festival
+-   As a user I want to be able to click on different speakers that I can learn about their background
+-   As a user I want to click on the details of each even to learn more about what will be on offer for a particular panel session
+-   As a user I want to be able to book ticket for the event through a third party provider like Eventbrite so that the organiser knows that I will be there
+-   As a user I want to be able to reach out to the organiser so that I can enquire for more information
+-   As a sponsor I want to be able to see the potential of this event for my sponsorship money so that I can decide whether to give money again next time
+-   As a potential donor I want to see the impact that this event can generate/has been generating so that I can decided to provide more assistance for next time
+-   As an admin I want to be able to add guest speakers so that I can keep track of them in the database
+-   As an admin I want to be able to write contents to promote the different events
 
 [Return to overview](#overview)
 
@@ -175,7 +182,7 @@ Notable package, services and tools used
 
 Project plan and estimation
 =======
-I estimated that the core, production ready, prototype would take 120 agile points to build including UX and UI deasign and it would definitely take more than 2 weeks I had been allocated :D – you can't learn unless you set your bar high. Additional features of the core build will take additional 50 points. Overall, I think this project would need approximately 170 agile points to a point where I would be satisfied.
+I estimated that the core, production ready, prototype would take 40 agile points to build including UX and UI design. Additional accompanying mobile app built using React Native JS will take additional 20 points.
 
 ![Burndown Chart](link here)
 

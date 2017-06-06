@@ -19,7 +19,7 @@ keystone.init({
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': '.hbs',
-	'mongo': process.env.MONGODB_URI || 'mongodb://localhost/festival-cerita-jakarta',
+	'mongo': process.env.MONGODB_URI,
 
 	'custom engine': handlebars.create({
 		layoutsDir: 'templates/views/layouts',
@@ -56,9 +56,9 @@ keystone.set('routes', require('./routes'));
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
-	posts: ['posts', 'post-categories'],
+	stories: ['posts', 'post-categories'],
 	users: ['users', 'volunteers'],
-	events: ['events', 'writers', 'event-categories'],
+	program: ['events', 'writers', 'event-categories'],
 	galleries: 'galleries',
 	enquiries: 'enquiries',
 });

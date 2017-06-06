@@ -26,6 +26,7 @@
   "scripts": {
     "lint": "eslint .",
     "start-dev": "nodemon --debug keystone.js",
-    "start": "node keystone.js"
+    "start": "node keystone.js",
+    "postinstall": "npm rebuild node-sass"
   }
 }

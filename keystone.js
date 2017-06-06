@@ -19,7 +19,7 @@ keystone.init({
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': '.hbs',
-	'mongo': 'mongodb://localhost/festival-cerita-jakarta' || process.env.MONGO_URI,
+	'mongo': process.env.MONGO_URI,
 
 	'custom engine': handlebars.create({
 		layoutsDir: 'templates/views/layouts',

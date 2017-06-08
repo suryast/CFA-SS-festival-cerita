@@ -7,6 +7,7 @@
 		<title>Festival Cerita Jakarta</title>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link href="/styles/site.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=EB+Garamond|Pacifico" rel="stylesheet">
 
 		{{!-- This file provides the default styling for the KeystoneJS Content Editor
 			- only renders when user is logged in and admin--}}
@@ -23,32 +24,33 @@
 	<body>
 		<div id="header">
 			<div class="container">
-				<div role="navigation" class="navbar navbar-default">
+				<div role="navigation" class="navbar navbar-default" style="color:'#c6306e'";>
 					<div class="container-fluid">
 						<div class="navbar-header">
 							<button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle">
 								<span class="sr-only">Toggle navigation</span>
 								<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 							</button>
-							<a href="/" class="navbar-brand">Festival Cerita Jakarta</a>
+							<a href="/" class="navbar-brand" style="font-family: 'Pacifico', cursive; color:#c6306e;">Festival Cerita Jakarta</a>
 						</div>
 						<div class="collapse navbar-collapse">
-							<ul class="nav navbar-nav navbar-left">
+							<ul class="nav navbar-nav navbar-left" >
 									{{# each navLinks}}
 									<li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
-										<a href="{{ href }}">{{ label }}</a>
+										<a style="font-weight:bold; color:black" href="{{ href }}">{{ label }}</a>
 									</li>
-								{{/each}}
+									{{/each}}
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
+								<li><a style="color:black" href="/">About Us</a></li>
+								<li><a style="color:black" href="/">Support Us</a></li>
+								<li><a style="color:black" href="/contact">Contact Us</a></li>
+								<li><a class="btn btn-danger pull-right" type="button" style="color:#fff; padding:0.9rem; margin-top:5px; margin-right:10px;" role="button" href="https://www.eventbrite.com/e/festival-cerita-jakarta-for-web-testing-only-do-not-book-tickets-35160306423?ref=ebtn" target="_blank">TICKET</a></li>
 								{{#if user}}
 								<li><a href="/keystone/signout">Sign Out</a></li>
-								{{else}}
-								<li><a href="/keystone/signin">Sign In</a></li>
 								{{/if}}
 							</ul>
 						</div>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -85,16 +87,69 @@
 			{{{body}}}
 		</div>
 		<div class="container">
+			<h6>CORE DONORS</h6>
 			<div id="footer">
-				<p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
+				<div class="row" style="padding-bottom:2rem">
+					<div class="col-sm-2 col-md-2" style="padding-top:12px">
+						<img src="http://res.cloudinary.com/suryast/image/upload/v1496848122/create-nsw_ie3ejc.svg">
+					</div>
+					<div class="col-sm-2 col-md-2" style="padding-top:12px">
+						<img src="http://res.cloudinary.com/suryast/image/upload/v1496848234/australia-council-for-the-arts_byhq1m.svg">
+					</div>
+				</div>
 			</div>
 		</div>
+		<div class="container">
+			<h6>MAJOR PARTNERS</h6>
+			<div id="footer">
+				<div class="row" style="padding-bottom:2rem">
+					<div class="col-sm-2 col-md-2 logo-image-1" style="padding-top:12px">
+						<img src="http://res.cloudinary.com/suryast/image/upload/v1496848311/nesa_iw9gas.svg">
+					</div>
+					<div class="col-sm-2 col-md-2" style="padding-top:12px">
+						<img src="http://res.cloudinary.com/suryast/image/upload/v1496848311/sydney-morning-herald_z4wgmw.svg">
+					</div>
+					<div class="col-sm-2 col-md-2" style="padding-top:12px">
+						<img src="http://res.cloudinary.com/suryast/image/upload/v1496848310/gleebooks_g1fvyg.svg">
+					</div>
+					<div class="col-sm-2 col-md-2" style="padding-top:12px">
+						<img src="http://res.cloudinary.com/suryast/image/upload/v1496848309/abc-arts_szkd66.svg">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div id="footer">
+				<div class="row" style="padding-bottom:2rem">
+				 	<div class="col-sm-3 col-md-3" style="padding-top:12px">
+						<p>@Festival Cerita Jakarta 2017 </p>
+					</div>
+					<div class="col-sm-6 col-md-6">
+						<div class="nav nav-pills flex-column flex-sm-row">
+						  <li class="nav-item">
+						    <a class="nav-link active" href="#">Privacy</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" href="#">Terms & Conditions</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" href="#">Sitemap</a>
+						  </li>
+						</div>
+					</div>
+					<div class="col-sm-3 col-md-3" style="padding-top:10px">
+						<p>Design and code: <a href="http://twitter.com/ssetiyaputra">@ssetiyaputra</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		{{!--
 			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
 			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
 			//- you can upgrade to 2.1.4 (also bundled) for better performance.
 		--}}
-		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
+		<script src="/js/jquery/jquery-2.1.4.min.js"></script>
 		{{!--
 			//- Customise which Bootstrap javascript files are served by including
 			//- them specifically here, instead of bootstrap-3.3.5.min.js

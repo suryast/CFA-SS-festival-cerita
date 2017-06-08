@@ -2,8 +2,11 @@
 	margin-top: 30px;
 }
 
+#body {
+	margin: 0px;
+}
+
 #footer {
-	margin-top: 30px;
 	border-top: 1px solid #eeeeee;
 	padding-top: 30px;
 	color: #777777;
@@ -13,4 +16,16 @@
     display: block;
     max-width: 100%;
     height: auto;
+}
+
+.orange {
+	background-color: lighten($brand-warning, 30%);
+}
+
+.yellow {
+	background-color: lighten($brand-danger, 30%);
+}
+
+.pink {
+	background-color: lighten($brand-primary, 30%);
 }

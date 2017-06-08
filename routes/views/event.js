@@ -12,6 +12,7 @@ exports = module.exports = function (req, res) {
 	};
 	locals.data = {
 		events: [],
+		writers: [],
 	};
 
 	// Load the current event
@@ -20,7 +21,7 @@ exports = module.exports = function (req, res) {
 		var q = keystone.list('Event').model.findOne({
 			state: 'confirmed',
 			slug: locals.filters.event,
-		}).populate('creator categories');
+		}).populate('creator categories panels');
 
 		q.exec(function (err, result) {
 			locals.data.event = result;

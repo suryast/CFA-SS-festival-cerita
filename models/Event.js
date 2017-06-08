@@ -22,7 +22,7 @@ Event.add({
 		extended: { type: Types.Html, wysiwyg: true, height: 400 },
 	},
 	categories: { type: Types.Relationship, ref: 'EventCategory', many: true },
-	panels: { type: Types.Relationship, ref: 'Writer', many: true },
+	panels: { type: Types.Relationship, ref: 'Writer', many: true, index: true },
 });
 
 Event.schema.virtual('content.full').get(function () {

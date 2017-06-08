@@ -7,12 +7,12 @@ var Types = keystone.Field.Types;
  */
 
 var Writer = new keystone.List('Writer', {
-	map: { name: 'title' },
-	autokey: { path: 'slug', from: 'title', unique: true },
+	map: { name: 'name' },
+	autokey: { path: 'slug', from: 'name', unique: true },
 });
 
 Writer.add({
-	title: { type: String, required: true },
+	name: { type: Types.Name, required: true, index: true },
 	state: { type: Types.Select, options: 'confirmed, tbc', default: 'confirmed', index: true },
 	author: { type: Types.Relationship, ref: 'User', index: true },
 	image: { type: Types.CloudinaryImage },
@@ -26,5 +26,7 @@ Writer.schema.virtual('content.full').get(function () {
 	return this.content.extended || this.content.brief;
 });
 
-Writer.defaultColumns = 'title, state|20%, author|20%';
+Writer.relationship({ ref: 'Event', path: 'events', refPath: 'panels' });
+
+Writer.defaultColumns = 'name, state|20%, author|20%';
 Writer.register();

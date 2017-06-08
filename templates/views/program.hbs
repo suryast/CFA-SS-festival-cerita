@@ -1,33 +1,38 @@
 <div class="container">
-	<h1>Events</h1>
-</div>
+
+			<h1>PROGRAM</h1>
+			<h4 class="text-weight-normal">Showing {{ data.events.results.length}} events.</h4>
+
+			<div class="dropdown">
+				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			    Filter by category..
+			    <span class="caret"></span>
+			  </button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					<li><a href="/program" class="active list-group-item">All Categories</a></li>
+					{{# each data.categories }}
+					<li><a href="{{categoryEventUrl key}}" class="false list-group-item">{{name}}</a></li>
+					{{/each}}
+				</ul>
+			</div>
+	</div>
+
+
 <div class="container">
 	<div class="row">
-		<div class="col-sm-8 col-md-9">
-			<h4 class="text-weight-normal">Showing {{ data.events.results.length}} events.</h4>
-			<div class="blog">
-				{{# each data.events.results}}
-				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
-					<h2><a href="{{eventUrl slug}}">{{{title}}}</a></h2>
-					<p class="lead text-muted">{{{categoryEventList categories prefix="Event category:"}}}
-							<!-- {{#if writer.title.first}}by {{writer.title.first}}{{/if}} -->
-					</p>
-					{{#if image}}<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img pull-right">{{/if}}
+		{{# each data.events.results}}
+		<div class="col-sm-4 col-md-4">
+			<div class="thumbnail">
+				{{#if image}}<img src="{{{cloudinaryUrl image width=400 height=400 crop='fit' }}}">{{/if}}
+				<div class="caption">
+					<h3><a href="{{eventUrl slug}}">{{{title}}}</a></h3>
+					<p class="lead text-muted">{{{categoryEventList categories prefix="Event category:"}}}</p>
 					<p>{{{content.brief}}}</p>
 					{{#if content.extended}}<p class="read-more"><a href="{{eventUrl slug}}">Read more...</a></p>{{/if}}
 				</div>
-				{{/each}}
 			</div>
 		</div>
-		<div class="col-sm-4 col-md-3">
-			<h2>Categories</h2>
-			<div style="margin-top: 70px;" class="list-group">
-				<a href="/program" class="active list-group-item">All Categories</a>
-				{{# each data.categories }}
-				<a href="{{categoryEventUrl key}}" class="false list-group-item">{{name}}</a>
-				{{/each}}
-			</div>
-		</div>
+		{{/each}}
 	</div>
 	{{>event_pagination}}
 </div>

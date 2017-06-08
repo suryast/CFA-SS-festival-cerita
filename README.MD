@@ -1,7 +1,7 @@
 **Festival Cerita Jakarta** by Rumah Cerita
 ======
 
-Heroku link: [heroku](heroku)
+Heroku link: [https://festival-cerita.herokuapp.com/](https://festival-cerita.herokuapp.com/)
 
 Github link: [https://github.com/suryast/CFA-SS-festival](https://github.com/suryast/CFA-SS-festival)
 
@@ -13,26 +13,15 @@ Overview
 *   [Solution](#solution)
 *   [User stories](#user-stories)
 *   [UX: User flow diagram](#ux-user-flow-diagram)
-*   [Concept, Design & Build](#concept-design-build)
-    *   [Concept](#concept)
-    *   [Design](#design)
-    *   [Build](#build)
-    *   [Comparison](#concept-design-build-comparison)
 *   [Wireframes](#wireframes)
 *   [Back-end: MongoDB schema design](#back-end-mongodb-schema-design)
-*   [Notable package, services and tools used](#notable-packages-services-tools-used)
 *   [Style guide](#style-guide)
     *   [Color](#color)
     *   [Font type](#font-type)
     *   [Code style](#code-style)
-*   [Project management in Trello](#project-management)
+*   [Project management](#project-management)
 *   [Outstanding issues](#outstanding-issues)
-
 *   [Installation, Setup, Deployment](#installation--setup--deployment)
-    *   [Pre-requisites](#pre-requisites)
-    *   [Setup procedure](#setup-procedure)
-    *   [Deployment(optional)](#deployment-optional)
-
 
 Project Brief
 ======
@@ -121,7 +110,7 @@ Solution
 -   Landing page that can be the starting point of information for all stakeholders
 -   Has CMS dashboard
 -   Integrated ticketing connection using Eventbrite’s API
--   Containing database that records participants, volunteers, authors and contents
+-   Containing database that records participants, volunteers, speakers and contents
 
 [Return to overview](#overview)
 
@@ -146,11 +135,6 @@ UX: User flow diagram
 
 [Return to overview](#overview)
 
-Concept, Design & Build
-======
-
-[Return to overview](#overview)
-
 Wireframes
 ======
 I used sketch to the wireframes. You can find the UI prototypes here [](wireframes here).
@@ -167,14 +151,7 @@ I used sketch to the wireframes. You can find the UI prototypes here [](wirefram
 
 [Return to overview](#overview)
 
-
 Back-end: MongoDB schema design
-======
-![ERD](link)
-
-[Return to overview](#overview)
-
-Notable package, services and tools used
 ======
 ![ERD](link)
 
@@ -202,6 +179,11 @@ Here is my presentation deck for the demo day
 [Return to overview](#overview)
 
 Outstanding issues
+======
+
+[Return to overview](#overview)
+
+Installation, Setup, Deployment
 ======
 
 [Return to overview](#overview)

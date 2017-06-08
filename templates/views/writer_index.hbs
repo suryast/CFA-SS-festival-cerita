@@ -1,5 +1,5 @@
 <div class="container">
-	<h1>Writer Index</h1>
+	<h1>SPEAKERS</h1>
 </div>
 <div class="container">
 	<div class="row">
@@ -8,7 +8,7 @@
 			<div class="blog">
 				{{# each data.writers.results}}
 				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
-					<h2><a href="{{writerUrl slug}}">{{{title}}}</a></h2>
+					<h2><a href="{{writerUrl slug}}">{{{name.first}}} {{{name.last}}}</a></h2>
 					<p class="lead text-muted">
 							{{#if author.name.first}} added by {{author.name.first}}{{/if}}
 					</p>

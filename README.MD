@@ -132,20 +132,21 @@ I used Trello to map user stories and project planning. The board can be found h
 
 UX: User flow diagram
 ======
+TBC
 
 [Return to overview](#overview)
 
 Wireframes
 ======
-I used sketch to the wireframes. You can find the UI prototypes here [](wireframes here).
+I used wireframe.cc for the wireframing .
+
+![Homepage](http://res.cloudinary.com/suryast/image/upload/v1497411936/Homepage_zxmxkm.png)
+
+![Program](http://res.cloudinary.com/suryast/image/upload/v1497412727/Stories_fsgugf.png)
 
 ![Mobile](wireframe)
 
-![Mobiles](wireframe.jpg)
-
-![Mobile](wireframexyi6.jpg)
-
-![Mobilep](wireframe)
+![Mobile](wireframe)
 
 ![Mobile](wireframe)
 
@@ -153,15 +154,13 @@ I used sketch to the wireframes. You can find the UI prototypes here [](wirefram
 
 Back-end: MongoDB schema design
 ======
-![ERD](link)
+![ERD](http://res.cloudinary.com/suryast/image/upload/v1497410342/ERD_Festival_c8teqf.png)
 
 [Return to overview](#overview)
 
 Project plan and estimation
 =======
 I estimated that the core, production ready, prototype would take 40 agile points to build including UX and UI design. Additional accompanying mobile app built using React Native JS will take additional 20 points.
-
-![Burndown Chart](link here)
 
 [Return to overview](#overview)
 
@@ -180,6 +179,12 @@ Here is my presentation deck for the demo day
 
 Outstanding issues
 ======
+-  Homepage contents are not actively updating yet
+-  Need a db connection to a small react-native mobile app for volunteers to distribute tasks before and during the festival
+-  Need nice assets for the design
+-  Need design and colour guide
+-  Implement testing of the backends
+-  Update design and page layout
 
 [Return to overview](#overview)
 

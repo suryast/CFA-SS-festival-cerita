@@ -5845,3 +5845,115 @@ button.close {
 
 .pink {
   background-color: #e9a6c2; }
+
+.masonry {
+  display: flex;
+  flex-direction: row; }
+  .masonry__column {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 25%;
+    max-width: 25%; }
+    .masonry__column--2 {
+      flex-grow: 2;
+      flex-basis: 50%;
+      max-width: 50%; }
+    .masonry__column--3 {
+      flex-grow: 3;
+      flex-basis: 75%;
+      max-width: 75%; }
+  .masonry__item {
+    display: flex; }
+    .masonry__item.half-width > * {
+      flex-basis: 50%;
+      max-width: 50%; }
+    .masonry__item.full-height > * {
+      height: 100%; }
+    .masonry__item.to-right {
+      justify-content: flex-end; }
+    .masonry__item > * {
+      max-width: 100%;
+      flex-grow: 1; }
+
+.image-has-text {
+  position: relative;
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  transition: 600ms; }
+  .image-has-text:hover {
+    background-size: 105% 105%; }
+    .image-has-text:hover:before {
+      background: rgba(0, 0, 0, 0.55); }
+    .image-has-text:hover .image-text,
+    .image-has-text:hover .category-label {
+      opacity: 1; }
+  .image-has-text:before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: 600ms; }
+
+.image-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  opacity: 0.85;
+  transition: 600ms; }
+  .image-text h1 {
+    margin-bottom: 20px; }
+  .image-text > * {
+    color: white; }
+
+.image-wrap {
+  flex-grow: 1;
+  height: 100%;
+  width: 100%; }
+  .image-wrap img {
+    height: 100%;
+    max-width: 100%;
+    width: auto;
+    visibility: hidden; }
+
+.category-label {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-transform: uppercase;
+  color: white;
+  border: 2px solid white;
+  font-size: 11px;
+  padding: 5px 10px;
+  opacity: 0.85;
+  transition: 600ms; }
+  .category-label--black {
+    border: 2px solid #222;
+    color: #222; }
+
+.posted-time {
+  font-size: 13px; }
+
+.text-only {
+  position: relative;
+  padding: 20px;
+  background: beige;
+  min-height: 200px; }
+  .text-only .posted-time {
+    position: absolute;
+    bottom: 15px;
+    left: 20px; }
+
+.valign-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); }

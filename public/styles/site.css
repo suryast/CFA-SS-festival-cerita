@@ -5821,6 +5821,9 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+body {
+  overflow-x: hidden; }
+
 #header {
   margin-top: 30px; }
 
@@ -5846,9 +5849,24 @@ button.close {
 .pink {
   background-color: #e9a6c2; }
 
+@media screen and (max-width: 667px) {
+  .top-content {
+    margin-bottom: 25px; } }
+
 .masonry {
   display: flex;
   flex-direction: row; }
+  @media screen and (max-width: 667px) {
+    .masonry {
+      flex-wrap: wrap; } }
+  @media screen and (min-width: 668px) and (max-width: 1023px) {
+    .masonry.three-column .masonry__column {
+      flex-basis: calc(100%/3);
+      max-width: calc(100%/3); } }
+  @media screen and (min-width: 668px) and (max-width: 1023px) {
+    .masonry.three-column .half-width > * {
+      flex-basis: 100%;
+      max-width: 100%; } }
   .masonry__column {
     display: flex;
     flex: 1;
@@ -5856,19 +5874,35 @@ button.close {
     flex-grow: 1;
     flex-basis: 25%;
     max-width: 25%; }
+    @media screen and (max-width: 667px) {
+      .masonry__column {
+        flex-basis: 100%;
+        max-width: 100%; } }
     .masonry__column--2 {
       flex-grow: 2;
       flex-basis: 50%;
       max-width: 50%; }
+      @media screen and (max-width: 667px) {
+        .masonry__column--2 {
+          flex-basis: 100%;
+          max-width: 100%; } }
     .masonry__column--3 {
       flex-grow: 3;
       flex-basis: 75%;
       max-width: 75%; }
+      @media screen and (max-width: 667px) {
+        .masonry__column--3 {
+          flex-basis: 100%;
+          max-width: 100%; } }
   .masonry__item {
     display: flex; }
     .masonry__item.half-width > * {
       flex-basis: 50%;
       max-width: 50%; }
+      @media screen and (max-width: 667px) {
+        .masonry__item.half-width > * {
+          flex-basis: 100%;
+          max-width: 100%; } }
     .masonry__item.full-height > * {
       height: 100%; }
     .masonry__item.to-right {

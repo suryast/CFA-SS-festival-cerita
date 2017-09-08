@@ -1,3 +1,7 @@
+body{
+	overflow-x: hidden;
+}
+
 #header {
 	margin-top: 30px;
 }
@@ -30,9 +34,32 @@
 	background-color: lighten($brand-primary, 30%);
 }
 
+.top-content{
+	@media screen and (max-width: 667px){
+		margin-bottom: 25px;
+	}
+}
+
 .masonry{
 	display: flex;
   	flex-direction: row;
+  	@media screen and (max-width: 667px){
+		flex-wrap: wrap;
+	}
+	&.three-column{
+		.masonry__column{
+			@media screen and (min-width: 668px) and (max-width: 1023px){
+				flex-basis: calc(100%/3);
+				max-width: calc(100%/3);
+			}
+		}
+		.half-width > *{
+			@media screen and (min-width: 668px) and (max-width: 1023px){
+				flex-basis: 100%;
+  				max-width: 100%;
+			}
+		}
+	}
   	&__column{
   		display: flex;
   		flex: 1;
@@ -40,15 +67,27 @@
   		flex-grow: 1;
   		flex-basis: 25%;
   		max-width: 25%;
+  		@media screen and (max-width: 667px){
+			flex-basis: 100%;
+			max-width: 100%;
+		}
   		&--2{
   			flex-grow: 2;
   			flex-basis: 50%;
   			max-width: 50%;
+  			@media screen and (max-width: 667px){
+  				flex-basis: 100%;
+  				max-width: 100%;
+  			}
   		}
   		&--3{
   			flex-grow: 3;
   			flex-basis: 75%;
   			max-width: 75%;
+  			@media screen and (max-width: 667px){
+  				flex-basis: 100%;
+  				max-width: 100%;
+  			}
   		}
   	}
   	&__item{
@@ -59,6 +98,10 @@
   			> *{
 				flex-basis: 50%;
   				max-width: 50%;
+  				@media screen and (max-width: 667px){
+	  				flex-basis: 100%;
+	  				max-width: 100%;
+	  			}
   			}
   		}
   		&.full-height{

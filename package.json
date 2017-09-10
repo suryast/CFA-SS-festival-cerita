@@ -29,5 +29,9 @@
     "start-dev": "nodemon --debug keystone.js",
     "start": "node keystone.js",
     "postinstall": "npm rebuild node-sass"
-  }
+  },
+  "engines": {
+      "node": "7.10.0",
+      "npm": "4.2.0"
+  } 
 }

@@ -5999,7 +5999,7 @@ body {
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0;
-    left: 0;
+    left: 10px;
     background-color: #fff; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 105px; /* Place content 60px from the top */

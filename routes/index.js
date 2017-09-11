@@ -45,6 +45,7 @@ exports = module.exports = function (app) {
 	app.get('/writer_index/:state?', routes.views.writer_index);
 	app.get('/program/event/:event', routes.views.event);
 	app.get('/program/:category?', routes.views.program);
+	app.get('/about', routes.views.about);
 
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

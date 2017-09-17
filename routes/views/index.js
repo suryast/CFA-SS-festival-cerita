@@ -127,7 +127,7 @@ exports = module.exports = function (req, res) {
 
 		var q = keystone.list('Event').paginate({
 			page: req.query.page || 1,
-			perPage: 6,
+			perPage: 3,
 			maxPages: 1,
 		})
 			.sort('-publishedDate')

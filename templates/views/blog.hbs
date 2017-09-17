@@ -10,7 +10,7 @@
 					<p class="lead text-muted">{{{categoryList categories prefix="Posted in "}}}
 							{{#if author.name.first}}by {{author.name.first}}{{/if}}
 					</p>
-					<p>{{{content.brief}}}</p>
+					<p>{{{stripHtml content.brief}}}</p>
 					{{#if content.extended}}<p class="read-more"><a href="{{postUrl slug}}">Selengkapnya...</a></p>{{/if}}
 				</div>
 				{{/each}}

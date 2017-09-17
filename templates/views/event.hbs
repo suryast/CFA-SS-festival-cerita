@@ -1,21 +1,18 @@
-<div class="container">
-	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-			<article>
+<article>
+	<div class="container">
+		<div class="col-sm-10 col-md-10">
 				<p><a href="/program">&larr; kembali ke jadwal acara</a></p>
 				<hr>
-				<header>
-					<h1>{{data.event.title}}</h1>
-					<h5>
-						{{{categoryEventList data.event.categories prefix="Event category: "}}}
-						<!-- {{#if creator.name.first}}by {{creator.name.first}}{{/if}} -->
-					</h5>
-				</header>
+				<h1>{{data.event.title}}</h1>
+				<h4>
+					{{{categoryEventList data.event.categories prefix="Event category: "}}}
+					<!-- {{#if creator.name.first}}by {{creator.name.first}}{{/if}} -->
+				</h4>
 				<div class="post">
 					{{#if data.event.image}}<img src="{{{cloudinaryUrl data.event.image width=750 height=450 crop='fit' }}}" class="img-responsive">{{/if}}
 					{{{data.event.content.extended}}}
 				</div>
-			</article>
 		</div>
 	</div>
-</div>
+</article>
+<br>

@@ -6,6 +6,7 @@ var cloudinary = require('cloudinary');
 
 // Collection of templates to interpolate
 var linkTemplate = _.template('<a href="<%= url %>"><%= text %></a>');
+var linkTemplateAlt = _.template('<a href="<%= url %>" style="color:#fff; padding:5px"><%= text %></a>');
 var scriptTemplate = _.template('<script src="<%= src %>"></script>');
 var cssLinkTemplate = _.template('<link href="<%= href %>" rel="stylesheet">');
 
@@ -100,9 +101,9 @@ module.exports = function () {
 
 			if (autolink) {
 				return _.map(tags, function (tag) {
-					return linkTemplate({
-						url: ('/blog/' + tag.key),
-						text: _.escape(tag.name),
+					return linkTemplateAlt({
+						url: ('/program/' + tag.key),
+						text: _.escape(tag.name.toUpperCase()),
 					});
 				}).join(separator);
 			}
@@ -112,7 +113,7 @@ module.exports = function () {
 		if (categories && categories.length) {
 			output = prefix + createTagList(categories) + suffix;
 		}
-		return new hbs.SafeString(output);
+		return output;
 	};
 
 	_helpers.categoryEventList = function (categories, options) {
@@ -175,6 +176,11 @@ module.exports = function () {
 			list: 'Post',
 			id: options,
 		});
+		return rtn;
+	};
+
+	_helpers.stripHtml = function (html) {
+		var rtn = html.replace(/<(?:.|\n)*?>/gm, '');
 		return rtn;
 	};
 

@@ -5976,10 +5976,14 @@ body {
   padding: 5px 10px;
   opacity: 1;
   transition: 600ms; }
-  .category-label--blue {
+  .category-label--white {
     border: 2px solid #fff;
     color: #fff;
     background-color: transparent;
+    opacity: 1; }
+  .category-label--blue {
+    border: 2px solid #4087BC;
+    background-color: #4087BC;
     opacity: 1; }
 
 .posted-time {

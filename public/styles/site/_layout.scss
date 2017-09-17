@@ -195,13 +195,19 @@ body{
 	&--black{
 
 	}
-  &--blue{
+  &--white{
     border: 2px solid #fff;
     color: #fff;
     background-color: transparent;
     opacity: 1;
   }
+  &--blue{
+    border: 2px solid #4087BC;
+    background-color: #4087BC;
+    opacity: 1;
+  }
 }
+
 
 .posted-time{
 	font-size: 13px;

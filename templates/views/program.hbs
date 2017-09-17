@@ -25,7 +25,7 @@
 				<div class="caption">
 					<h3><a href="{{eventUrl slug}}">{{{title}}}</a></h3>
 					<p class="lead text-muted">{{{categoryEventList categories prefix="Event category: "}}}</p>
-					<p>{{{content.brief}}}</p>
+					<p>{{{stripHtml content.brief}}}</p>
 					{{#if content.extended}}<p class="read-more"><a href="{{eventUrl slug}}">Selengkapnya...</a></p>{{/if}}
 				</div>
 			</div>

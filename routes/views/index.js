@@ -19,6 +19,7 @@ exports = module.exports = function (req, res) {
 		events: [],
 		categories: [],
 		event_categories: [],
+		writers:[],
 	};
 
 	// Load all categories
@@ -126,7 +127,7 @@ exports = module.exports = function (req, res) {
 
 		var q = keystone.list('Event').paginate({
 			page: req.query.page || 1,
-			perPage: 3,
+			perPage: 6,
 			maxPages: 1,
 		})
 			.sort('-publishedDate')
@@ -138,6 +139,21 @@ exports = module.exports = function (req, res) {
 
 		q.exec(function (err, results) {
 			locals.data.events = results;
+			next(err);
+		});
+	});
+
+	// Load the events
+	view.on('init', function (next) {
+
+		var q = keystone.list('Writer').paginate({
+			page: req.query.page || 1,
+			perPage: 3,
+			maxPages: 1,
+		})
+
+		q.exec(function (err, results) {
+			locals.data.writers = results;
 			next(err);
 		});
 	});

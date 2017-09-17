@@ -1,13 +1,23 @@
-<ul class="pagination">
-	<li {{#unless data.writers.previous}}class="disabled"{{/unless}}>
-		<a href="{{paginationWriterPreviousUrl data.writers.previous}}">
-			<span class="glyphicon glyphicon-chevron-left"></span>
-		</a>
-	</li>
-	{{{paginationWriterNavigation data.writers.pages data.writers.currentPage data.writers.totalPages}}}
-	<li {{#unless data.writers.next}}class="disabled"{{/unless}}>
-		<a href="{{paginationWriterNextUrl data.writers.next data.writers.totalPages}}">
-			<span class="glyphicon glyphicon-chevron-right"></span>
-		</a>
-	</li>
-</ul>
+<div class="container" style="padding-top:2rem">
+	<h3>PENGISI ACARA</h3>
+	<div class="container-flex">
+		{{# each data.writers.results}}
+			<div class="col-sm-4 col-md-4"  style="padding-left: 0; padding-right: 0">
+				<a href="{{writerUrl slug}}">
+				<div class="image-has-text" style="background-image: url({{{cloudinaryUrl image crop='fit' }}})">
+					<div class="image-wrap">
+						<img src="{{{cloudinaryUrl image height=400 crop='fit' }}}" style="    -webkit-filter: grayscale(100%); filter: grayscale(100%);">
+					</div>
+					<div class="image-text center-block">
+						<h3>{{{name.first}}} {{{name.last}}}</h3>
+					</div>
+				</div>
+				</a>
+			</div>
+		{{/each}}
+	</div>
+	<br>
+	<div class="pull-right">
+		<a href="/writer_index" type="btn btn-link" style="color:black">Tampilkan semua pengisi acara...</br></a>
+	</div>
+</div>

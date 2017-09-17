@@ -1,8 +1,8 @@
 <div class="container" style="padding-top:2rem">
-	<h3>FITUR ACARA</h3>
-	<div class="row">
+	<h3>ACARA</h3>
+	<div class="container-flex">
 		{{# each data.events.results}}
-		<div class="col-sm-4 col-md-4">
+		<div class="col-sm-4 col-md-4"  style="padding-left: 1rem; padding-right: 1rem">
 			<div class="thumbnail">
 				{{#if image}}<img src="{{{cloudinaryUrl image width=400 height=400 crop='fit' }}}" style="    -webkit-filter: grayscale(100%); filter: grayscale(100%);">{{/if}}
 				<div class="caption">

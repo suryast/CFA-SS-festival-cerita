@@ -5853,6 +5853,11 @@ body {
   .top-content {
     margin-bottom: 25px; } }
 
+.container-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start; }
+
 .masonry {
   display: flex;
   flex-direction: row; }

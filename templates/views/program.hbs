@@ -6,6 +6,7 @@
 	    Filter kategori..
 	    <span class="caret"></span>
 	  </button>
+	  <br>
 		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 			<li><a href="/program" class="active list-group-item">Semua kategori</a></li>
 			{{# each data.categories }}
@@ -15,10 +16,10 @@
 	</div>
 </div>
 
-<div class="container">
-	<div class="row">
+<div class="container" style="padding-left:0">
+	<div class="container-flex">
 		{{# each data.events.results}}
-		<div class="col-sm-4 col-md-4">
+		<div class="col-sm-6 col-md-4 col-xs-12" >
 			<div class="thumbnail">
 				{{#if image}}<img src="{{{cloudinaryUrl image width=400 height=400 crop='fit' }}}">{{/if}}
 				<div class="caption">
@@ -31,5 +32,5 @@
 		</div>
 		{{/each}}
 	</div>
-	{{>event_pagination}}
+	<hr>
 </div>

@@ -196,9 +196,10 @@ body{
 
 	}
   &--blue{
-    background-color: #4187BC;
-    border: 2px solid #4187BC;
+    border: 2px solid #fff;
     color: #fff;
+    background-color: transparent;
+    opacity: 1;
   }
 }
 

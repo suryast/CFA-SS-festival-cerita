@@ -59,8 +59,8 @@ exports = module.exports = function (req, res) {
 
 		var q = keystone.list('Event').paginate({
 			page: req.query.page || 1,
-			perPage: 10,
-			maxPages: 10,
+			perPage: 20,
+			maxPages: 5,
 		})
 			.sort('-publishedDate')
 			.populate('creator categories');

@@ -1,20 +1,14 @@
-<div class="container">
-	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-			<article>
-				<p><a href="/writer_index">&larr; back to the index</a></p>
-				<hr>
-				<header>
-					<h1>{{data.writer.title}}</h1>
-					<h5>
-						Status: {{data.writer.state}}
-					</h5>
-				</header>
-				<div class="post">
-					{{#if data.writer.image}}<img src="{{{cloudinaryUrl data.writer.image width=750 height=450 crop='fit' }}}" class="img-responsive">{{/if}}
-					{{{data.writer.content.extended}}}
-				</div>
-			</article>
-		</div>
+<div class="container center-block">
+	<p><a href="/writer_index">&larr; back to the index</a></p>
+	<hr>
+
+		<h1>{{data.writer.name.first}} {{data.writer.name.last}}</h1>
+		<h4>
+			Status: {{& data.writer.state}}
+		</h4>
+
+	<div class="post">
+		{{#if data.writer.image}}<img src="{{{cloudinaryUrl data.writer.image width=750 height=450 crop='fit' }}}" class="img-responsive">{{/if}}
 	</div>
+	<p style="padding-right: 300px; padding-left: 0px; padding-top:12px, padding-bottom:20px">{{& data.writer.content.extended}}</p>
 </div>

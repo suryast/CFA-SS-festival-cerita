@@ -20,7 +20,7 @@ exports = module.exports = function (req, res) {
 		var q = keystone.list('Writer').model.findOne({
 			state: 'confirmed',
 			slug: locals.filters.writer,
-		}).populate('author');
+		}).populate('Writer');
 
 		q.exec(function (err, result) {
 			locals.data.writer = result;
@@ -32,7 +32,7 @@ exports = module.exports = function (req, res) {
 	// Load other writers
 	view.on('init', function (next) {
 
-		var q = keystone.list('Writer').model.find().where('state', 'active').populate('author').limit('4');
+		var q = keystone.list('Writer').model.find().where('state', 'active').populate('Writer').limit('4');
 
 		q.exec(function (err, results) {
 			locals.data.writers = results;

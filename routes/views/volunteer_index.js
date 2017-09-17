@@ -20,8 +20,8 @@ exports = module.exports = function (req, res) {
 
 		var q = keystone.list('Volunteer').paginate({
 			page: req.query.page || 1,
-			perPage: 10,
-			maxPages: 10,
+			perPage: 50,
+			maxPages: 1,
 			filters: {
 				state: 'active',
 			},

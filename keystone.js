@@ -34,7 +34,9 @@ keystone.init({
 	'auth': true,
 	'user model': 'User',
 	'session store': 'mongo',
+	'wysiwyg override toolbar': false,
 	'wysiwyg menubar': true,
+	'wysiwyg skin': 'lightgray',
 });
 
 // Load your project's Models

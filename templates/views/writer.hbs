@@ -1,14 +1,13 @@
 <div class="container center-block">
 	<p><a href="/writer_index">&larr; kembali ke index</a></p>
 	<hr>
-
-		<h1>{{data.writer.name.first}} {{data.writer.name.last}}</h1>
-		<h4>
-			Status: {{& data.writer.state}}
-		</h4>
-
+	<h1>{{data.writer.name.first}} {{data.writer.name.last}}</h1>
+	<h4>
+		Status: {{& data.writer.state}}
+	</h4>
 	<div class="post">
-		{{#if data.writer.image}}<img src="{{{cloudinaryUrl data.writer.image width=750 height=450 crop='fit' }}}" class="img-responsive">{{/if}}
+		{{#if data.writer.image}}<img src="{{{cloudinaryUrl data.writer.image height=450 crop='fit' }}}" class="img-responsive">{{/if}}
 	</div>
-	<p style="padding-right: 300px; padding-left: 0px; padding-top:12px; padding-bottom:20px">{{& data.writer.content.extended}}</p>
+	<br>
+	<p style="padding-right: 50px;padding-left: 0px; padding-top:12px; padding-bottom:20px">{{& data.writer.content.extended}}</p>
 </div>

@@ -148,7 +148,7 @@ exports = module.exports = function (req, res) {
 
 		var q = keystone.list('Writer').paginate({
 			page: req.query.page || 1,
-			perPage: 3,
+			perPage: 4,
 			maxPages: 1,
 		})
 

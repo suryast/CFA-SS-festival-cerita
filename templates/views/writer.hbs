@@ -1,5 +1,5 @@
 <div class="container center-block">
-	<p><a href="/writer_index">&larr; back to the index</a></p>
+	<p><a href="/writer_index">&larr; kembali ke index</a></p>
 	<hr>
 
 		<h1>{{data.writer.name.first}} {{data.writer.name.last}}</h1>
@@ -10,5 +10,5 @@
 	<div class="post">
 		{{#if data.writer.image}}<img src="{{{cloudinaryUrl data.writer.image width=750 height=450 crop='fit' }}}" class="img-responsive">{{/if}}
 	</div>
-	<p style="padding-right: 300px; padding-left: 0px; padding-top:12px, padding-bottom:20px">{{& data.writer.content.extended}}</p>
+	<p style="padding-right: 300px; padding-left: 0px; padding-top:12px; padding-bottom:20px">{{& data.writer.content.extended}}</p>
 </div>

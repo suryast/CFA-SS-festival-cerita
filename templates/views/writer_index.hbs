@@ -1,16 +1,16 @@
 <div class="container">
-	<h1>SPEAKERS</h1>
+	<h1>PENGISI ACARA</h1>
 </div>
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12 col-md-12">
-			<h4 class="text-weight-normal">Showing {{ data.writers.results.length}} writers.</h4>
+			<h4 class="text-weight-normal">Menampilkan {{ data.writers.results.length}} pengisi acara.</h4>
 			<div class="blog">
 				{{# each data.writers.results}}
 				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
 					<h2><a href="{{writerUrl slug}}">{{{name.first}}} {{{name.last}}}</a></h2>
 					<p class="lead text-muted">
-							{{#if author.name.first}} added by {{author.name.first}}{{/if}}
+							{{#if author.name.first}} ditambahkan oleh {{author.name.first}}{{/if}}
 					</p>
 						<div class="row">
 							<div class="col-sm-8 col-md-3=9">

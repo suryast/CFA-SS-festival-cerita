@@ -19,8 +19,9 @@ var _ = require('lodash');
 */
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
-		{ label: 'SCHEDULE', key: 'event', href: '/program' },
-		{ label: 'SPEAKERS', key: 'writer', href: '/writer_index' },
+		{ label: 'JADWAL', key: 'event', href: '/program' },
+		{ label: 'PENGISI ACARA', key: 'writer', href: '/writer_index' },
+		{ label: 'CERITA', key: 'post', href: '/blog' },
 	];
 	res.locals.user = req.user;
 	next();

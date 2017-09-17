@@ -1,10 +1,10 @@
 <div class="container">
-	<h1>STORIES</h1>
+	<h1>Cerita</h1>
 </div>
 <div class="container">
 	<div class="row">
 		<div class="col-sm-8 col-md-9">
-			<h4 class="text-weight-normal">Showing {{ data.posts.results.length}} posts.</h4>
+			<h4 class="text-weight-normal">Menampilkan {{ data.posts.results.length}} cerita.</h4>
 			<div class="blog">
 				{{# each data.posts.results}}
 				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
@@ -13,15 +13,15 @@
 							{{#if author.name.first}}by {{author.name.first}}{{/if}}
 					</p>
 					<p>{{{content.brief}}}</p>
-					{{#if content.extended}}<p class="read-more"><a href="{{postUrl slug}}">Read more...</a></p>{{/if}}
+					{{#if content.extended}}<p class="read-more"><a href="{{postUrl slug}}">Selengkapnya...</a></p>{{/if}}
 				</div>
 				{{/each}}
 			</div>
 		</div>
 		<div class="col-sm-4 col-md-3">
-			<h2>Categories</h2>
+			<h2>Kategori</h2>
 			<div style="margin-top: 70px;" class="list-group">
-				<a href="/blog" class="active list-group-item">All Categories</a>
+				<a href="/blog" class="active list-group-item">Semua kategori</a>
 				{{# each data.categories }}
 				<a href="{{categoryUrl key}}" class="false list-group-item">{{name}}</a>
 				{{/each}}

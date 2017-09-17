@@ -1,13 +1,13 @@
 <div class="container">
 	<h1>PROGRAM</h1>
-	<h4 class="text-weight-normal">Showing {{ data.events.results.length}} events.</h4>
+	<h4 class="text-weight-normal">Menampilkan{{ data.events.results.length}} acara.</h4>
 	<div class="dropdown">
 		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-	    Filter by category..
+	    Filter kategori..
 	    <span class="caret"></span>
 	  </button>
 		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-			<li><a href="/program" class="active list-group-item">All Categories</a></li>
+			<li><a href="/program" class="active list-group-item">Semua kategori</a></li>
 			{{# each data.categories }}
 			<li><a href="{{categoryEventUrl key}}" class="false list-group-item">{{name}}</a></li>
 			{{/each}}
@@ -25,7 +25,7 @@
 					<h3><a href="{{eventUrl slug}}">{{{title}}}</a></h3>
 					<p class="lead text-muted">{{{categoryEventList categories prefix="Event category: "}}}</p>
 					<p>{{{content.brief}}}</p>
-					{{#if content.extended}}<p class="read-more"><a href="{{eventUrl slug}}">Read more...</a></p>{{/if}}
+					{{#if content.extended}}<p class="read-more"><a href="{{eventUrl slug}}">Selengkapnya...</a></p>{{/if}}
 				</div>
 			</div>
 		</div>

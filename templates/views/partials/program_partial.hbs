@@ -1,5 +1,5 @@
 <div class="container" style="padding-top:2rem">
-	<h3>FEATURED EVENTS</h3>
+	<h3>FITUR ACARA</h3>
 	<div class="row">
 		{{# each data.events.results}}
 		<div class="col-sm-4 col-md-4">
@@ -9,13 +9,13 @@
 					<h3><a href="{{eventUrl slug}}">{{{title}}}</a></h3>
 					<p class="lead text-muted">{{{categoryList categories prefix="Posted in "}}}
 					<p>{{{content.brief}}}</p>
-					{{#if content.extended}}<p class="read-more"><a href="{{eventUrl slug}}">Read more...</a></p>{{/if}}
+					{{#if content.extended}}<p class="read-more"><a href="{{eventUrl slug}}">Selengkapnya...</a></p>{{/if}}
 				</div>
 			</div>
 		</div>
 		{{/each}}
 	</div>
 	<div class="pull-right">
-		<a href="/blog" type="btn btn-link" style="color:black">View all events..</br></a>
+		<a href="/blog" type="btn btn-link" style="color:black">Tampilkan semua acara...</br></a>
 	</div>
 </div>

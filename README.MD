@@ -1,7 +1,7 @@
 **Festival Cerita Jakarta** by Rumah Cerita
 ======
 
-Heroku link: [https://festival-cerita.herokuapp.com/](https://festival-cerita.herokuapp.com/)
+Heroku link: [https://salty-waters-18939.herokuapp.com/](https://salty-waters-18939.herokuapp.com/)
 
 Github link: [https://github.com/suryast/CFA-SS-festival](https://github.com/suryast/CFA-SS-festival)
 

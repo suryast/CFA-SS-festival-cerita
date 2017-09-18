@@ -300,3 +300,14 @@ body{
 @keyframes blinker {  
   50% { opacity: 0; }
 }
+
+.global-sidebar {
+    display: block;
+    width: 100px;
+    height: 150vh;
+    float: left;
+    position: fixed;
+    top: 0;
+    left: 3%;
+    z-index: 9999;
+}

@@ -37,6 +37,7 @@ keystone.init({
 	'wysiwyg override toolbar': false,
 	'wysiwyg menubar': true,
 	'wysiwyg skin': 'lightgray',
+	'wysiwyg additional buttons': 'searchreplace visualchars fontselect fontsizeselect',
 });
 
 // Load your project's Models

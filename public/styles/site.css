@@ -5991,6 +5991,8 @@ body {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     margin-left: 5px; }
+  .reg a {
+    color: white; }
 
 .logo-fcj {
   position: fixed; }

@@ -6,7 +6,7 @@ var cloudinary = require('cloudinary');
 
 // Collection of templates to interpolate
 var linkTemplate = _.template('<a href="<%= url %>"><%= text %></a>');
-var linkTemplateAlt = _.template('<a href="<%= url %>" style="color:#fff; padding:5px"><%= text %></a>');
+var linkTemplateAlt = _.template('<a href="<%= url %>" style="color:#4087BC; padding:5px"><%= text %></a>');
 var scriptTemplate = _.template('<script src="<%= src %>"></script>');
 var cssLinkTemplate = _.template('<link href="<%= href %>" rel="stylesheet">');
 

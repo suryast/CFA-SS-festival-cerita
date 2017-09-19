@@ -24,9 +24,19 @@
 				{{#if image}}<img src="{{{cloudinaryUrl image width=400 height=400 crop='fit' }}}">{{/if}}
 				<div class="caption">
 					<h3 style="padding-bottom:1rem;"><a href="{{eventUrl slug}}">{{{title}}}</a></h3>
-					<span class="category-label--blue">{{{categoryList categories}}}</span>
+					<div class="row">
+						<div class="col-sm-6 col-md-6 col-xs-6 ">
+							<span class="category-label--blue" style="padding:0.5rem">{{{categoryList categories}}} </span>						
+						</div>
+						<div class="col-sm-6 col-md-6 col-xs-6 ">
+						</div>
+					</div>
 					<p>{{{content.brief}}}</p>
-					{{#if content.extended}}<p class="read-more"><a href="{{eventUrl slug}}">Selengkapnya...</a></p>{{/if}}
+					{{#if content.extended}}<p class="read-more">
+						<a href="{{eventUrl slug}}">Selengkapnya...</a>					{{#if eventbrite_link}} <a onMouseOver="this.style.color='#180318'" onMouseOut="this.style.color='#fff'" class="btn btn-danger pull-right" 	type="button" style="color:#fff; padding:0.5rem; margin-left: 0;" 	role="button" href="{{{eventbrite_link}}}" target="_blank">
+							Registrasi
+					 	</a>{{/if}}
+					</p>{{/if}}
 				</div>
 			</div>
 		</div>

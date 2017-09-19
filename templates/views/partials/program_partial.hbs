@@ -10,7 +10,12 @@
 					<span class="category-label--blue">{{{categoryList categories}}}</span>
 					<p style="padding-top:1rem">{{{waktu}}}</p>
 					<p style="padding-top:1rem">{{ stripHtml content.brief }}</p>
-					{{#if content.extended}}<p class="read-more"><a href="{{eventUrl slug}}">Selengkapnya...</a></p>{{/if}}
+					{{#if content.extended}}<p class="read-more">
+						<a href="{{eventUrl slug}}">Selengkapnya...</a>					
+						{{#if eventbrite_link}} <a onMouseOver="this.style.color='#180318'" onMouseOut="this.style.color='#fff'" class="btn btn-danger pull-right" 	type="button" style="color:#fff; padding:0.5rem; margin-left: 0;" 	role="button" href="{{{eventbrite_link}}}" target="_blank">
+								Registrasi
+					 	</a>{{/if}}
+					</p>{{/if}}
 				</div>
 			</div>
 		</div>

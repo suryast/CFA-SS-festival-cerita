@@ -6152,7 +6152,7 @@ body {
     opacity: 1; }
   .category-label--blue {
     border: 2px solid #4087BC;
-    background-color: #4087BC;
+    color: #4087BC;
     opacity: 1;
     padding: 2px;
     font-size: 12px;

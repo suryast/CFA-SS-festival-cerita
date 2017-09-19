@@ -6277,3 +6277,8 @@ body {
     display: block !important; }
   .hidden-lg {
     display: none !important; } }
+
+.btn-danger {
+  background-color: #DE5789; }
+  .btn-danger:hover {
+    background-color: #DE5789; }

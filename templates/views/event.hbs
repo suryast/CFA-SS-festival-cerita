@@ -8,8 +8,15 @@
 					{{{categoryEventList data.event.categories prefix="Event category: "}}}
 					<!-- {{#if creator.name.first}}by {{creator.name.first}}{{/if}} -->
 				</h4>
+				<div class="container" style="padding-left:0;padding-top:1rem">
+					{{#if data.event.eventbrite_link}} <a onMouseOver="this.style.color='#180318'" onMouseOut="this.style.color='#fff'" class="btn btn-danger" type="button" style="color:#fff; padding:1rem; margin-left: 0;" 	role="button" href="{{{data.event.eventbrite_link}}}" target="_blank">
+						REGISTRASI
+					 </a>{{/if}}
+				</div>
+			 	<br>
 				<div class="post">
 					{{#if data.event.image}}<img src="{{{cloudinaryUrl data.event.image width=750 height=450 crop='fit' }}}" class="img-responsive">{{/if}}
+					<br>
 					{{{data.event.content.extended}}}
 				</div>
 		</div>

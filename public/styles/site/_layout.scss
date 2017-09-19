@@ -535,3 +535,10 @@ body{
 		display: none !important;
 	}
 }
+
+.btn-danger{
+  background-color: #DE5789;
+  &:hover{
+    background-color:#DE5789;
+  }
+}

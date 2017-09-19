@@ -18,6 +18,7 @@ Event.add({
 	waktu: {type: Types.Html, wysiwyg: false, height: 50},
 	creator: { type: Types.Relationship, ref: 'User', index: true },
 	image: { type: Types.CloudinaryImage },
+	eventbrite_link: {type: Types.Url},
 	content: {
 		brief: { type: Types.Html, wysiwyg: true, height: 150 },
 		extended: { type: Types.Html, wysiwyg: true, height: 400 },

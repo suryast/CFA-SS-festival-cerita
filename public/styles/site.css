@@ -5824,8 +5824,176 @@ button.close {
 body {
   overflow-x: hidden; }
 
+.globalWrapper {
+  max-width: 1060px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative; }
+  @media (min-width: 1300px) {
+    .globalWrapper {
+      max-width: 1360px; } }
+
+.fixedWrapper {
+  position: absolute;
+  top: 20px;
+  z-index: 9999; }
+  .fixedWrapper--left {
+    left: 0; }
+    @media screen and (max-width: 667px) {
+      .fixedWrapper--left {
+        top: 10px; }
+        .fixedWrapper--left img {
+          width: 100px; } }
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      .fixedWrapper--left {
+        top: -30px;
+        z-index: 9999;
+        left: 50%;
+        transform: translateX(-50%); }
+        .fixedWrapper--left .sidenavigation {
+          position: initial;
+          height: auto; }
+          .fixedWrapper--left .sidenavigation img {
+            width: 75px; } }
+    @media screen and (min-width: 1366px) {
+      .fixedWrapper--left {
+        left: -1%; } }
+  .fixedWrapper--right {
+    right: 100px;
+    top: auto; }
+    @media screen and (max-width: 667px) {
+      .fixedWrapper--right {
+        position: initial; } }
+    .fixedWrapper--right .sidenavigation {
+      height: 100vh; }
+      @media screen and (max-width: 667px) {
+        .fixedWrapper--right .sidenavigation {
+          height: auto; } }
+
+.sidenavigation {
+  position: fixed;
+  height: calc(100vh - 20px); }
+  @media screen and (max-width: 667px) {
+    .sidenavigation {
+      position: initial;
+      height: auto; } }
+  .sidenavigation__social {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); }
+    @media screen and (max-width: 667px) {
+      .sidenavigation__social {
+        position: initial;
+        transform: translateY(0); } }
+    .sidenavigation__social li {
+      margin-bottom: 20px; }
+      .sidenavigation__social li:last-child {
+        margin-bottom: 0; }
+      .sidenavigation__social li img {
+        width: 24px; }
+      .sidenavigation__social li a {
+        transition: 500ms;
+        opacity: 0.5;
+        display: block;
+        padding: 3px;
+        border-radius: 3px; }
+        .sidenavigation__social li a:hover {
+          opacity: 0.9;
+          background: rgba(150, 148, 206, 0.5);
+          box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1); }
+  .sidenavigation__by {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    width: 130px; }
+    .sidenavigation__by img {
+      max-width: 100%; }
+
 #header {
-  margin-top: 30px; }
+  margin-bottom: 30px; }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    #header {
+      margin-top: 30px; } }
+  #header > .container {
+    padding-top: 30px;
+    background-image: url("http://res.cloudinary.com/suryast/image/upload/c_scale,w_1024/v1505790822/big-banner_mbkvsy.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 510px;
+    position: relative;
+    max-width: 940px; }
+    @media screen and (max-width: 667px) {
+      #header > .container {
+        background-image: none;
+        height: auto; } }
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      #header > .container {
+        height: 425px; } }
+    @media (min-width: 1300px) {
+      #header > .container {
+        max-width: 1270px;
+        background-image: url("http://res.cloudinary.com/suryast/image/upload/c_scale,w_1270/v1505790822/big-banner_mbkvsy.jpg");
+        height: 689px; } }
+    #header > .container img {
+      max-width: 100%; }
+  #header a {
+    color: white;
+    letter-spacing: 0.05em; }
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      #header a {
+        padding: 10px; } }
+  @media screen and (max-width: 667px) {
+    #header .navbar {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      left: 0; } }
+  @media screen and (max-width: 667px) {
+    #header .navbar-header {
+      position: absolute;
+      top: 30px;
+      z-index: 999;
+      right: 20px; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    #header .navbar-right {
+      font-size: 13px; } }
+  #header .navbar-default .navbar-toggle {
+    background: white; }
+  @media screen and (max-width: 667px) {
+    #header .navbar-default .navbar-collapse {
+      position: absolute;
+      top: 75px;
+      z-index: 999;
+      width: 100%;
+      left: 15px;
+      background: rgba(137, 0, 66, 0.75);
+      text-align: center; } }
+
+.reg {
+  text-align: center;
+  margin-bottom: 15px; }
+  .reg > div {
+    display: inline-block; }
+  .reg__date {
+    font-family: 'Pacifico', cursive;
+    color: #C900BD;
+    font-size: 150%; }
+  .reg__txt {
+    background: #C900BD;
+    color: white;
+    padding: 4px 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-left: 5px; }
+
+.logo-fcj {
+  position: fixed; }
 
 #body {
   margin: 0px; }
@@ -5985,7 +6153,10 @@ body {
   .category-label--blue {
     border: 2px solid #4087BC;
     background-color: #4087BC;
-    opacity: 1; }
+    opacity: 1;
+    padding: 2px;
+    font-size: 12px;
+    letter-spacing: 0.05em; }
 
 .posted-time {
   font-size: 13px; }
@@ -6095,3 +6266,14 @@ body {
   top: 0;
   left: 3%;
   z-index: 9999; }
+
+/* Need to override this hidden-xx from bootstrap, sorry. */
+@media (max-width: 1279px) and (min-width: 992px) {
+  .hidden-md {
+    display: none !important; } }
+
+@media (min-width: 1280px) {
+  .hidden-md {
+    display: block !important; }
+  .hidden-lg {
+    display: none !important; } }

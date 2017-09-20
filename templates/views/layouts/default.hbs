@@ -33,6 +33,23 @@
 		<meta name="og:locale" content="id_ID">
 		<meta name="og:type" content="website">
 
+		<link rel="apple-touch-icon" href="touch-icon-iphone.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="touch-icon-iphone-retina.png">
+		<link rel="apple-touch-icon" sizes="167x167" href="touch-icon-ipad-retina.png">
+
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!-- Global Site Tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106771061-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments)};
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-106771061-1');
+		</script>
+
 		{{!-- This file provides the default styling for the KeystoneJS Content Editor
 			- only renders when user is logged in and admin--}}
 		{{{isAdminEditorCSS user}}}

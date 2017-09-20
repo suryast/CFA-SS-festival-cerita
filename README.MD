@@ -1,6 +1,8 @@
 **Festival Cerita Jakarta** by Rumah Cerita
 ======
 
+Production link: [https:///www.festivalceritajakarta.com/](https://www.festivalceritajakarta.com/)
+
 Heroku link: [https://salty-waters-18939.herokuapp.com/](https://salty-waters-18939.herokuapp.com/)
 
 Github link: [https://github.com/suryast/CFA-SS-festival](https://github.com/suryast/CFA-SS-festival)
@@ -179,16 +181,6 @@ Here is my presentation deck for the demo day
 
 Outstanding issues
 ======
--  Homepage contents are not actively updating yet
--  Need a db connection to a small react-native mobile app for volunteers to distribute tasks before and during the festival
--  Need nice assets for the design
--  Need design and colour guide
--  Implement testing of the backends
--  Update design and page layout
-
-[Return to overview](#overview)
-
-Installation, Setup, Deployment
-======
+-  Create test suites
 
 [Return to overview](#overview)

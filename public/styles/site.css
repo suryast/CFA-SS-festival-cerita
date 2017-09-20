@@ -6092,8 +6092,7 @@ body {
   height: 100%;
   width: 100%;
   object-fit: contain;
-  background-size: cover;
-  background-position: 50% 50%;
+  background-position: 100% 100%;
   background-repeat: no-repeat;
   transition: 600ms; }
   .image-has-text:hover {

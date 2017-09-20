@@ -144,20 +144,15 @@ exports = module.exports = function (req, res) {
 	});
 
 	// Load the writers
-	view.on('init', function (next) {
+	view.on('init', function(next) {
 
-		var q = keystone.list('Writer').paginate({
-			page: req.query.page || 1,
-			perPage: 4,
-			maxPages: 1,
-		})
-			.sort('-publishedDate')
+	    var q = keystone.list('Writer').model.find({state: "confirmed"}).sort('-publishedDate').limit(1);
 
-		q.exec(function (err, results) {
-			locals.data.writers = results;
-			console.log(locals.data.writers.results[0]);
-			next(err);
-		});
+	    q.exec(function(err, results) {
+	        locals.data.writer = results;
+	        // console.log(results)
+	        next(err);
+	    });
 	});
 
 	// Render the view

@@ -56,7 +56,7 @@ exports = module.exports = function (req, res) {
 				return next(err);
 			}
 
-			locals.data.even_categories = results;
+			locals.data.event_categories = results;
 
 			// Load the counts for each category
 			async.each(locals.data.event_categories, function (event_category, next) {
@@ -143,7 +143,7 @@ exports = module.exports = function (req, res) {
 		});
 	});
 
-	// Load the events
+	// Load the writers
 	view.on('init', function (next) {
 
 		var q = keystone.list('Writer').paginate({
@@ -151,9 +151,11 @@ exports = module.exports = function (req, res) {
 			perPage: 4,
 			maxPages: 1,
 		})
+			.sort('-publishedDate')
 
 		q.exec(function (err, results) {
 			locals.data.writers = results;
+			console.log(locals.data.writers.results[0]);
 			next(err);
 		});
 	});

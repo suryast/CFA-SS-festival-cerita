@@ -184,6 +184,10 @@ module.exports = function () {
 		return rtn;
 	};
 
+	_helpers.logWriter = function (input) {
+		console.log(input);
+	};
+
 	// ### CloudinaryUrl Helper
 	// Direct support of the cloudinary.url method from Handlebars (see
 	// cloudinary package documentation for more details).

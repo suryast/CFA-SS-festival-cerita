@@ -2,22 +2,17 @@
 	<h1>Index Relawan</h1>
 </div>
 <div class="container">
-	<div class="row">
-		<div class="col-sm-8 col-md-9">
-			<h4 class="text-weight-normal">Menampilkan {{ data.volunteers.results.length}} relawan.</h4>
-			<div class="blog">
-				{{# each data.volunteers.results}}
-				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
-					<h2><a href="{{volunteerUrl slug}}">{{{title}}}</a></h2>
-					<p class="lead text-muted">
-							{{#if author.name.first}} ditambahkan oleh {{author.name.first}}{{/if}}
-					</p>
-					{{#if image}}<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img pull-right">{{/if}}
-					<p>{{{content.brief}}}</p>
-				</div>
-				{{/each}}
+	<h4 class="text-weight-normal">Menampilkan {{ data.volunteers.results.length}} relawan.</h4>
+	{{# each data.volunteers.results}}
+	<div class="col-sm-6 col-md-6" style="padding-left:0">
+		<div class="blog">
+			<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
+				<h2><a href="{{volunteerUrl slug}}">{{{title}}}</a></h2>
+				{{#if image}}<img src="{{{cloudinaryUrl image width=250 height=250 crop='fit' }}}" class="img pull-right">{{/if}}
+				<p>{{{content.brief}}}</p>
 			</div>
 		</div>
 	</div>
-	{{>volunteer_pagination}}
+	{{/each}}
 </div>
+<br>

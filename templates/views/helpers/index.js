@@ -11,9 +11,7 @@ var scriptTemplate = _.template('<script src="<%= src %>"></script>');
 var cssLinkTemplate = _.template('<link href="<%= href %>" rel="stylesheet">');
 
 module.exports = function () {
-
 	var _helpers = {};
-
 	/**
 	 * Generic HBS Helpers
 	 * ===================
@@ -520,7 +518,6 @@ module.exports = function () {
 		return new hbs.SafeString(output);
 	};
 
-
 	//  ### underscoreMethod call + format helper
 	//	Calls to the passed in underscore method of the object (Keystone Model)
 	//	and returns the result of format()
@@ -534,6 +531,5 @@ module.exports = function () {
 	_helpers.underscoreFormat = function (obj, underscoreMethod) {
 		return obj._[underscoreMethod].format();
 	};
-
 	return _helpers;
 };

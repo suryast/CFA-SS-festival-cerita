@@ -7,20 +7,20 @@
 			<h4 class="text-weight-normal">Menampilkan {{ data.writers.results.length}} pengisi acara.</h4>
 			<div class="blog">
 				{{# each data.writers.results}}
-				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
-					<h2><a href="{{writerUrl slug}}">{{{name.first}}} {{{name.last}}}</a></h2>
-					<p class="lead text-muted">
-							{{#if author.name.first}} ditambahkan oleh {{author.name.first}}{{/if}}
-					</p>
-						<div class="row">
-							<div class="col-sm-8 col-md-3=9">
-								<p>{{{content.brief}}}</p>
+					<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
+						<h2><a href="{{writerUrl slug}}">{{{name.first}}} {{{name.last}}}</a></h2>
+						<p class="lead text-muted">
+								{{#if author.name.first}} ditambahkan oleh {{author.name.first}}{{/if}}
+						</p>
+							<div class="row">
+								<div class="col-sm-8 col-md-3=9">
+									<p>{{{content.brief}}}</p>
+								</div>
+								<div class="col-sm-4 col-md-3">
+									{{#if image}}<img src="{{{cloudinaryUrl image width=300 height=300 crop='fit' }}}" class="img pull-right">{{/if}}
+								</div>
 							</div>
-							<div class="col-sm-4 col-md-3">
-								{{#if image}}<img src="{{{cloudinaryUrl image width=300 height=300 crop='fit' }}}" class="img pull-right">{{/if}}
-							</div>
-						</div>
-				</div>
+					</div>
 				{{/each}}
 			</div>
 		</div>

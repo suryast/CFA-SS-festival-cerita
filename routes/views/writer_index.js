@@ -26,7 +26,8 @@ exports = module.exports = function (req, res) {
 				state: 'confirmed',
 			},
 		})
-			.populate('author');
+			.populate('author')
+			.sort('slug');
 
 		// if (locals.data.category) {
 		// 	q.where('categories').in([locals.data.category]);

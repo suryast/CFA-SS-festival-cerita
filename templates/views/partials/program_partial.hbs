@@ -1,27 +1,32 @@
 <div class="container" style="padding-top:2rem">
 	<h3>ACARA</h3>
-	<div class="container-flex">
 		{{# each data.events.results}}
-		<div class="col-xs-12 col-sm-4 col-md-4"  style="padding-left:0">
-			<div class="thumbnail">
-				{{#if image}}<img src="{{{cloudinaryUrl image width=400 height=400 crop='fit' }}}">{{/if}}
-				<div class="caption">
-					<h3 style="padding-bottom:1rem;"><a href="{{eventUrl slug}}">{{{title}}}</a></h3>
-					<span class="category-label--blue">{{{categoryList categories}}}</span>
-					<p style="padding-top:1rem">{{{waktu}}}</p>
-					<p style="padding-top:1rem">{{{ content.brief }}}</p>
-					{{#if content.extended}}<p class="read-more">
-						<a href="{{eventUrl slug}}">Selengkapnya...</a>					
-						{{#if eventbrite_link}} <a onMouseOver="this.style.color='#180318'" onMouseOut="this.style.color='#fff'" class="btn btn-danger pull-right" 	type="button" style="color:#fff; padding:0.5rem; margin-left: 0;" 	role="button" href="{{{eventbrite_link}}}" target="_blank">
-								Registrasi
-					 	</a>{{/if}}
-					</p>{{/if}}
+			<div class="container-flex">
+				<div class="card-new" >
+					<div class="card-thumbnail">
+						{{#if image}}<img class="card-left" src="{{{cloudinaryUrl image width=400 height=400 crop='fit' }}}">{{/if}}
+						<h5 class="card-style">{{date event_time format=' MMM DD, LT'}}
+							<div class="hidden-md" >
+								<h3 style="padding-top:1rem;"><a href="{{eventUrl slug}}">{{{title}}}</a></h3>
+								<span class="category-label--blue">{{{categoryList categories}}}</span>
+							</div>
+						</h5>
+					</div>
+					<div class="card-right hidden-xs hidden-sm">
+						<h3 style="padding-bottom:1rem;"><a href="{{eventUrl slug}}">{{{title}}}</a></h3>
+						<span class="category-label--blue">{{{categoryList categories}}}</span>
+						<div class="separator"></div>
+						<div class="container-flex">
+							<p style="padding-top:1rem">{{{ content.brief }}}</p>
+						</div>
+					</div>		
+					<a href="{{eventUrl slug}}">
+						<div class="fab"><i class="fa fa-arrow-down fa-3x"></i></div>
+					</a> 
 				</div>
 			</div>
-		</div>
 		{{/each}}
-	</div>
-	<div class="pull-right">
+	<div class="pull-left">
 		<a href="/program" type="btn btn-link" style="color:black">Tampilkan semua acara...</br></a>
 	</div>
 </div>

@@ -6,13 +6,13 @@
 					<div class="card-thumbnail">
 						{{#if image}}<img class="card-left" src="{{{cloudinaryUrl image width=400 height=400 crop='fit' }}}">{{/if}}
 						<h5 class="card-style">{{date event_time format=' MMM DD, LT'}}
-							<div class="hidden-md" >
+							<div class="hidden-md hidden-lg" >
 								<h3 style="padding-top:1rem;"><a href="{{eventUrl slug}}">{{{title}}}</a></h3>
 								<span class="category-label--blue">{{{categoryList categories}}}</span>
 							</div>
 						</h5>
 					</div>
-					<div class="card-right hidden-xs hidden-sm hidden-lg">
+					<div class="card-right hidden-xs hidden-sm">
 						<h3 style="padding-bottom:1rem;"><a href="{{eventUrl slug}}">{{{title}}}</a></h3>
 						<span class="category-label--blue">{{{categoryList categories}}}</span>
 						<div class="separator"></div>

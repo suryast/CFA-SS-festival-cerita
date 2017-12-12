@@ -5828,7 +5828,8 @@ body {
   max-width: 1060px;
   margin-left: auto;
   margin-right: auto;
-  position: relative; }
+  position: relative;
+  overflow-x: hidden; }
   @media (min-width: 1300px) {
     .globalWrapper {
       max-width: 1360px; } }

@@ -5832,7 +5832,8 @@ body {
   overflow-x: hidden; }
   @media (min-width: 1300px) {
     .globalWrapper {
-      max-width: 1360px; } }
+      max-width: 1360px; 
+      overflow-x: hidden;} }
 
 .fixedWrapper {
   position: absolute;

@@ -76,6 +76,7 @@ h2.card-style {
 
 .separator {
 	margin-top: 10px;
+	margin-bottom: 10px;
 	border: 1px solid #C3C3C3;
 }
 
@@ -132,4 +133,71 @@ li.card-style {
 	-webkit-box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
 	box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
+}
+
+@media screen and (max-width: 767px){
+	.card-new{
+		height: auto;
+		margin: 0 auto 60px;
+	}
+	.card-thumbnail{
+		float: none;
+		position: initial;
+		height: auto;
+		width: 100%;
+	}
+	img.card-left{
+		position: initial;
+		transform: none;
+	}
+	h5.card-style{
+		position: initial;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-bottom: 30px;
+		margin-bottom: 0;
+		font-size: 2rem;
+	}
+	.card-style h3{
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+	.fab{
+		width: 50px;
+		height: 50px;
+		padding-top: 16px;
+		right: 20px;
+    	bottom: -20px;
+	}
+	.fab i{
+		font-size: 1.5em;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+	.card-style{
+		display: none;
+	}
+	.card-right{
+		position: absolute;
+    	top: 50px;
+	    width: 50%;
+	    right: 20px;
+	    background: rgba(255, 255, 255, 0.8);
+	    padding: 20px;
+	    margin: 0;
+	}
+	.acara .card-right h3{
+		margin: 0;
+	}
+	.fab{
+		width: 60px;
+		height: 60px;
+		padding-top: 20px;
+		right: 20px;
+    	bottom: -20px;
+	}
+	.fab i{
+		font-size: 1.5em;
+	}
 }

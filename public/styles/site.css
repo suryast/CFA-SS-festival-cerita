@@ -5828,12 +5828,10 @@ body {
   max-width: 1060px;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
-  overflow-x: hidden; }
+  position: relative; }
   @media (min-width: 1300px) {
     .globalWrapper {
-      max-width: 1360px; 
-      overflow-x: hidden;} }
+      max-width: 1360px; } }
 
 .fixedWrapper {
   position: absolute;

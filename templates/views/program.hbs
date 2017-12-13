@@ -9,7 +9,7 @@
 	  <br>
 		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 			<li><a href="/program" class="active list-group-item">Semua kategori</a></li>
-			{{# each data.categories }}
+			{{#each data.categories }}
 			<li><a href="{{categoryEventUrl key}}" class="false list-group-item">{{name}}</a></li>
 			{{/each}}
 		</ul>
@@ -17,7 +17,7 @@
 </div>
 <div class="container" style="padding-left:0">
 	<div class="container-flex">
-		{{# each data.events.results}}
+		{{#each data.events.results}}
 		<div class="col-sm-6 col-md-4 col-xs-12" >
 			<div class="thumbnail">
 				{{#if image}}<img src="{{{cloudinaryUrl image width=400 height=400 crop='fit' }}}">{{/if}}

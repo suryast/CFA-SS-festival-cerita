@@ -3,7 +3,7 @@
 </div>
 <div class="container">
 	<h4 class="text-weight-normal">Menampilkan {{ data.volunteers.results.length}} relawan.</h4>
-	{{# each data.volunteers.results}}
+	{{#each data.volunteers.results}}
 	<div class="col-sm-6 col-md-6" style="padding-left:0">
 		<div class="blog">
 			<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">

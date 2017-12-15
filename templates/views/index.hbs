@@ -3,7 +3,14 @@
 	<div class="row">
 		<div class="col-md-12 reg">
 			<div class="reg__date">16-17 Desember 2017</div>
-			<div class="reg__txt blink_me"><a onMouseOver="this.style.color='#180318'" onMouseOut="this.style.color='#fff'" href="https://www.eventbrite.com.au/d/indonesia--jakarta/festival-cerita/" target="_blank">2 Hari Lagi</a></div>
+			<div class="reg__txt" id="reg_txt" >
+				<a onMouseOver="this.style.color='#180318'" 
+					 onMouseOut="this.style.color='#fff'" 
+					 href="https://www.eventbrite.com.au/d/indonesia--jakarta/festival-cerita/" 
+					 target="_blank" id="demo">
+					COUNT DOWN
+				</a>
+			</div>
 		</div>
 	</div>
 </div>
@@ -182,14 +189,38 @@
 	</div>
 </div>
 <br>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Main -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:728px;height:90px"
-     data-ad-client="ca-pub-2272363865857482"
-     data-ad-slot="8262823049"></ins>
+
+<!-- Display the countdown timer in an element -->
 <script>
-(adsbygoogle = window.adsbygoogle || []).push({});
+// Set the date we're counting down to
+var countDownDate = new Date("Dec 16 , 2017 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = "COUNT DOWN: " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "TODAY";
+    $('#reg_txt').addClass('blink_me');
+  }
+}, 1000);
 </script>
 <br>
 {{>program_partial}}

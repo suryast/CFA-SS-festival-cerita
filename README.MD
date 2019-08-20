@@ -1,10 +1,6 @@
 **Festival Cerita Jakarta** by Rumah Cerita
 ======
 
-Production link: [https:///www.festivalceritajakarta.com/](https://www.festivalceritajakarta.com/)
-
-Heroku link: [https://salty-waters-18939.herokuapp.com/](https://salty-waters-18939.herokuapp.com/)
-
 Backup link: [https://boiling-forest-49716.herokuapp.com/](https://boiling-forest-49716.herokuapp.com/)
 
 Github link: [https://github.com/suryast/CFA-SS-festival](https://github.com/suryast/CFA-SS-festival)
@@ -186,3 +182,7 @@ Outstanding issues
 -  Create test suites
 
 [Return to overview](#overview)
+
+Production link: [https:///www.festivalceritajakarta.com/](https://www.festivalceritajakarta.com/)
+
+Heroku link: [https://salty-waters-18939.herokuapp.com/](https://salty-waters-18939.herokuapp.com/)
